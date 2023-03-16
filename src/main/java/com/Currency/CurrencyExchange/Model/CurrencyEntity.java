@@ -1,8 +1,11 @@
 package com.Currency.CurrencyExchange.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,8 +17,7 @@ import lombok.*;
 public class CurrencyEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private String id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -25,4 +27,10 @@ public class CurrencyEntity {
 
     @Column(name = "rate", nullable = false)
     private int rate;
+
+    @OneToMany(mappedBy = "currency", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<PreviousRatesEntity> previousRatesEntityList;
+
+
 }
