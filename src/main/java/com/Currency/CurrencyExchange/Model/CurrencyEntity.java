@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter
@@ -22,11 +23,11 @@ public class CurrencyEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "country", nullable = false)
-    private String country;
+    @Column(name = "date")
+    private LocalDate date;
 
     @Column(name = "rate", nullable = false)
-    private int rate;
+    private double rate;
 
     @OneToMany(mappedBy = "currency", cascade = CascadeType.ALL)
     @JsonIgnore

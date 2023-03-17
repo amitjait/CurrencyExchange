@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -15,14 +17,13 @@ import lombok.*;
 public class PreviousRatesEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private String id;
 
     @Column(name = "date", columnDefinition = "DATE")
-    private String date;
+    private LocalDate date;
 
     @Column(name = "previous_rate", nullable = false)
-    private int rate;
+    private double rate;
 
     @ManyToOne
     @JsonIgnore
