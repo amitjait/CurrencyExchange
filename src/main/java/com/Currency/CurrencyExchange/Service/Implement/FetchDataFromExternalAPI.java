@@ -57,7 +57,7 @@ public class FetchDataFromExternalAPI {
     public HashMap<String, List<Double>> getPreviousRates() throws IOException {
 //        data getting
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-        LocalDate date = LocalDate.now();
+//        LocalDate date = LocalDate.now();
 
 
 

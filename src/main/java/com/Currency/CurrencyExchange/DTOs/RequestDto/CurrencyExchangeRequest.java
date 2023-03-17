@@ -10,7 +10,6 @@ import lombok.*;
 @NoArgsConstructor
 public class CurrencyExchangeRequest {
 
-    int baseNumber;
 
     String base;
 
