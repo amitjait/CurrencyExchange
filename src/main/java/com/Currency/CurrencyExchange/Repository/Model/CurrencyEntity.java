@@ -1,4 +1,4 @@
-package com.Currency.CurrencyExchange.Model;
+package com.Currency.CurrencyExchange.Repository.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
